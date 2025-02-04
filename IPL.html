@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL Player Highlights</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 560px;
+            height: 315px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>IPL Player Highlights</h1>
+
+    <label for="player">Select Player:</label>
+    <select id="player">
+        <option value="virat">Virat Kohli</option>
+        <option value="rohit">Rohit Sharma</option>
+        <option value="dhoni">MS Dhoni</option>
+        <option value="pandya">Hardik Pandya</option> 
+        </select>
+
+    <button onclick="showHighlights()">Show Highlights</button>
+
+    <div id="highlights">
+        <h2>Player Highlights</h2>
+        <p id="player-name"></p>
+        <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function showHighlights() {
+            var player = document.getElementById("player").value;
+            var playerName = document.getElementById("player-name");
+            var video = document.getElementById("video");
+
+            switch (player) {
+                case "virat":
+                    playerName.textContent = "Virat Kohli";
+                    video.src = "https://www.youtube.com/embed/YOUR_VIRAT_KOHLI_VIDEO_ID"; 
+                    break;
+                case "rohit":
+                    playerName.textContent = "Rohit Sharma";
+                    video.src = "https://www.youtube.com/embed/YOUR_ROHIT_SHARMA_VIDEO_ID"; 
+                    break;
+                case "dhoni":
+                    playerName.textContent = "MS Dhoni";
+                    video.src = "https://www.youtube.com/embed/YOUR_MS_DHONI_VIDEO_ID"; 
+                    break;
+                case "pandya":
+                    playerName.textContent = "Hardik Pandya";
+                    video.src = "https://www.youtube.com/embed/YOUR_HARDIK_PANDYA_VIDEO_ID"; 
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
